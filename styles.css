@@ -22,7 +22,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr;
     justify-content: space-between;
-
     gap: 10px;
     height: 100px;
     width: 100%;
@@ -48,28 +47,26 @@ body {
 
 .logo-description {
     font-family: "Jaro", sans-serif;
-    font-size: 20px;
+    font-size: 28px;
     opacity: 0.9;
-    color: #c65bcf;
+    color: #b28eb5;
     transition: font-size 0.2s;
 }
 
 .logo-description:hover {
     cursor: pointer;
-    color: #b28eb5;
-    font-size: 22px;
+    color: #c65bcf;
+    font-size: 30px;
 }
 
-/* ul#navbar li {
-    display: inline;
-} */
 #nav-bar {
+    position: fixed;
+    top: 0;
     width: 100%;
-    /* background-color: antiquewhite; */
-    overflow: hidden;
-    font-family: "Outfit", sans-serif;
-    text-decoration: none;
-
+    z-index: 1000;
+    /* Ensure it's above other content */
+    background-color: rgba(51, 51, 51, 0.8);
+    /* Semi-transparent background */
 }
 
 #nav-bar ul {
@@ -82,8 +79,8 @@ body {
     list-style: none;
     overflow: hidden;
     position: sticky;
-    background-color: #333;
-    font-size: 28px;
+    font-family: "Outfit", sans-serif;
+    text-decoration: none;
     background: repeating-linear-gradient(90deg,
             var(--building-color3),
             var(--building-color3) 10%,
@@ -93,6 +90,7 @@ body {
             var(--building-color3) 10%,
             var(--window-color3) 10%,
             var(--window-color3) 30%);
+    font-size: 28px;
 }
 
 li {
@@ -109,4 +107,62 @@ li a {
 
 li a:hover {
     background-color: #111;
+}
+
+#video {
+    border: 3px dotted;
+    width: 70%;
+    height: 299px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+}
+
+#email {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #c65bcf;
+    border-radius: 5px;
+    width: 250px;
+}
+
+#submit {
+    padding: 10px 20px;
+    background-color: #c65bcf;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit:hover {
+    background-color: #a24aa9;
+}
+
+@media only screen and (max-width: 420px) {
+    #nav-bar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100%;
+        gap: 20px;
+        list-style: none;
+        overflow: hidden;
+        position: sticky;
+        background-color: #333;
+        font-size: 28px;
+    }
 }
